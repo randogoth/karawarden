@@ -132,7 +132,7 @@ def collect_links(hoarder_data: Dict) -> OrderedDict[str, List[LinkRecord]]:
     grouped: OrderedDict[str, List[LinkRecord]] = OrderedDict()
     now_dt = datetime.now(timezone.utc)
 
-    for entry in bookmarks:
+    for entry in reversed(bookmarks):
         content = entry.get("content") or {}
         if content.get("type") != "link":
             continue
